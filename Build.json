@@ -1,6 +1,7 @@
 [
     {
         "TargetName":  "PSVault",
-        "Type":  "Module"
+        "Type":  "Module",
+        "VersionAppendDate":  true
     }
 ]

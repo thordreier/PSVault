@@ -41,8 +41,6 @@ function Set-VaultCredential
             # Make sure that we don't continue on error, and that we catches the error
             $ErrorActionPreference = 'Stop'
 
-            # FIXXXME - maybe this should't be called every time in here!
-            $null = [Windows.Security.Credentials.PasswordVault,Windows.Security.Credentials,ContentType=WindowsRuntime]
             $vault = New-Object -TypeName 'Windows.Security.Credentials.PasswordVault'
 
             if ($Password -is [securestring])
@@ -60,9 +58,7 @@ function Set-VaultCredential
                 $Password = [string] $Password
             }
             
-            $null = [Windows.Security.Credentials.PasswordVault,Windows.Security.Credentials,ContentType=WindowsRuntime]
             $vaultcredential = [Windows.Security.Credentials.PasswordCredential]::new($Name, $Username, $Password)
-            $vault = New-Object -TypeName 'Windows.Security.Credentials.PasswordVault'
             $vault.Add($vaultcredential)
         }
         catch

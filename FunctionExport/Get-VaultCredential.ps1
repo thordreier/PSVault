@@ -28,16 +28,24 @@ function Get-VaultCredential
             # Make sure that we don't continue on error, and that we catches the error
             $ErrorActionPreference = 'Stop'
 
-            # FIXXXME - maybe this should't be called every time in here!
-            $null = [Windows.Security.Credentials.PasswordVault,Windows.Security.Credentials,ContentType=WindowsRuntime]
             $vault = New-Object -TypeName 'Windows.Security.Credentials.PasswordVault'
 
-            $vaultcredential = $vault.FindAllByResource($Name) | Select-Object -First 1
+            $vaultcredential = $vault.FindAllByResource($Name)
+            if ($vaultcredential.AdditionalTypeData)
+            {
+                # PS Core
+                $vaultcredential = $vaultcredential.AdditionalTypeData.GetEnumerator() | Select-Object -First 1 -ExpandProperty Value | Select-Object -First 1
+            }
+            else
+            {
+                $vaultcredential = $vaultcredential | Select-Object -First 1
+            }
+
             $null = $vaultcredential.RetrievePassword()
             $username = $vaultcredential.UserName
             $password = $vaultcredential.Password
             $credential = [pscredential]::new($username, ($password | ConvertTo-SecureString -AsPlainText -Force))
-            
+
             # Return
             $credential
         }
