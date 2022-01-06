@@ -1,7 +1,30 @@
 function Set-VaultCredential
 {
     <#
-        FIXXXME - write help stuff
+        .SYNOPSIS
+            Set vault credential
+
+        .DESCRIPTION
+            Set vault credential
+
+        .PARAMETER Name
+            Name of credential entry
+
+        .PARAMETER Credential
+            Credential object with username/password to store in vault
+
+        .PARAMETER Username
+            Username to store in vault
+
+        .PARAMETER Password
+            Password to store in vault
+            Either [string] or [securestring]
+
+        .EXAMPLE
+            Set-VaultCredential -Name cred1
+
+        .EXAMPLE
+            Set-VaultCredential -Name cred2 -Username userx -Password sEcReT
     #>
 
     [CmdletBinding(DefaultParameterSetName='PSCredential')]

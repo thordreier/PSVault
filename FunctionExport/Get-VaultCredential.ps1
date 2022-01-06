@@ -1,7 +1,20 @@
 function Get-VaultCredential
 {
     <#
-        FIXXXME - write help stuff
+        .SYNOPSIS
+            Get vault credential
+
+        .DESCRIPTION
+            Get vault credential
+
+        .PARAMETER Name
+            Name of credential entry
+
+        .EXAMPLE
+            Get-VaultCredential -Name cred1
+
+        .EXAMPLE
+            (Get-VaultCredential -Name cred2).GetNetworkCredential().Password
     #>
 
     [CmdletBinding()]
