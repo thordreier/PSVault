@@ -1,4 +1,4 @@
-function Get-VaultCredential
+function Get-WindowsVaultCredential
 {
     <#
         .SYNOPSIS
@@ -11,10 +11,10 @@ function Get-VaultCredential
             Name of credential entry
 
         .EXAMPLE
-            Get-VaultCredential -Name cred1
+            Get-WindowsVaultCredential -Name cred1
 
         .EXAMPLE
-            (Get-VaultCredential -Name cred2).GetNetworkCredential().Password
+            (Get-WindowsVaultCredential -Name cred2).GetNetworkCredential().Password
     #>
 
     [CmdletBinding()]

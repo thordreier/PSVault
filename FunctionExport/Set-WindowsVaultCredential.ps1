@@ -1,4 +1,4 @@
-function Set-VaultCredential
+function Set-WindowsVaultCredential
 {
     <#
         .SYNOPSIS
@@ -21,10 +21,10 @@ function Set-VaultCredential
             Either [string] or [securestring]
 
         .EXAMPLE
-            Set-VaultCredential -Name cred1
+            Set-WindowsVaultCredential -Name cred1
 
         .EXAMPLE
-            Set-VaultCredential -Name cred2 -Username userx -Password sEcReT
+            Set-WindowsVaultCredential -Name cred2 -Username userx -Password sEcReT
     #>
 
     [CmdletBinding(DefaultParameterSetName='PSCredential')]

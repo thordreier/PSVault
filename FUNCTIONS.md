@@ -4,25 +4,25 @@ Text in this document is automatically created - don't change it manually
 
 ## Index
 
-[Get-VaultCredential](#Get-VaultCredential)<br>
-[Set-VaultCredential](#Set-VaultCredential)<br>
+[Get-WindowsVaultCredential](#Get-WindowsVaultCredential)<br>
+[Set-WindowsVaultCredential](#Set-WindowsVaultCredential)<br>
 
 ## Functions
 
-<a name="Get-VaultCredential"></a>
-### Get-VaultCredential
+<a name="Get-WindowsVaultCredential"></a>
+### Get-WindowsVaultCredential
 
 ```
 
 NAME
-    Get-VaultCredential
+    Get-WindowsVaultCredential
     
 SYNOPSIS
     Get vault credential
     
     
 SYNTAX
-    Get-VaultCredential [-Name] <String> [<CommonParameters>]
+    Get-WindowsVaultCredential [-Name] <String> [<CommonParameters>]
     
     
 DESCRIPTION
@@ -41,7 +41,7 @@ PARAMETERS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS C:\>Get-VaultCredential -Name cred1
+    PS C:\>Get-WindowsVaultCredential -Name cred1
     
     
     
@@ -50,7 +50,7 @@ PARAMETERS
     
     -------------------------- EXAMPLE 2 --------------------------
     
-    PS C:\>(Get-VaultCredential -Name cred2).GetNetworkCredential().Password
+    PS C:\>(Get-WindowsVaultCredential -Name cred2).GetNetworkCredential().Password
     
     
     
@@ -58,27 +58,27 @@ PARAMETERS
     
     
 REMARKS
-    To see the examples, type: "get-help Get-VaultCredential -examples".
-    For more information, type: "get-help Get-VaultCredential -detailed".
-    For technical information, type: "get-help Get-VaultCredential -full".
+    To see the examples, type: "get-help Get-WindowsVaultCredential -examples".
+    For more information, type: "get-help Get-WindowsVaultCredential -detailed".
+    For technical information, type: "get-help Get-WindowsVaultCredential -full".
 
 ```
 
-<a name="Set-VaultCredential"></a>
-### Set-VaultCredential
+<a name="Set-WindowsVaultCredential"></a>
+### Set-WindowsVaultCredential
 
 ```
 NAME
-    Set-VaultCredential
+    Set-WindowsVaultCredential
     
 SYNOPSIS
     Set vault credential
     
     
 SYNTAX
-    Set-VaultCredential [-Name] <String> [-Credential] <PSCredential> [<CommonParameters>]
+    Set-WindowsVaultCredential [-Name] <String> [-Credential] <PSCredential> [<CommonParameters>]
     
-    Set-VaultCredential [-Name] <String> -Username <String> -Password <Object> [<CommonParameters>]
+    Set-WindowsVaultCredential [-Name] <String> -Username <String> -Password <Object> [<CommonParameters>]
     
     
 DESCRIPTION
@@ -107,7 +107,7 @@ PARAMETERS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS C:\>Set-VaultCredential -Name cred1
+    PS C:\>Set-WindowsVaultCredential -Name cred1
     
     
     
@@ -116,7 +116,7 @@ PARAMETERS
     
     -------------------------- EXAMPLE 2 --------------------------
     
-    PS C:\>Set-VaultCredential -Name cred2 -Username userx -Password sEcReT
+    PS C:\>Set-WindowsVaultCredential -Name cred2 -Username userx -Password sEcReT
     
     
     
@@ -124,9 +124,9 @@ PARAMETERS
     
     
 REMARKS
-    To see the examples, type: "get-help Set-VaultCredential -examples".
-    For more information, type: "get-help Set-VaultCredential -detailed".
-    For technical information, type: "get-help Set-VaultCredential -full".
+    To see the examples, type: "get-help Set-WindowsVaultCredential -examples".
+    For more information, type: "get-help Set-WindowsVaultCredential -detailed".
+    For technical information, type: "get-help Set-WindowsVaultCredential -full".
 
 ```
 
